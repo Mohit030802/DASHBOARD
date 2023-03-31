@@ -7,7 +7,7 @@ import {
 } from '@refinedev/core';
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
-    import { AuthPage,ErrorComponent
+    import { AuthPage
 ,notificationProvider
 ,RefineSnackbarProvider
 ,ThemedLayout
