@@ -5,9 +5,11 @@ import { Box, Container, Typography } from "@mui/material";
 import { ThemedTitle } from "@refinedev/mui";
 
 import { CredentialResponse } from "../interfaces/google";
+import { yariga } from '../assets';
+
 
 // Todo: Update your Google Client ID here
-const GOOGLE_CLIENT_ID = "1041339102270-jlljcjl19jo1hkgf695em3ibr7q2m734.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID = "1024818267169-niktiedvajg2k0ae8fusecjpfrltju5l.apps.googleusercontent.com";
 
 export const Login: React.FC = () => {
     const { mutate: login } = useLogin<CredentialResponse>();
@@ -27,7 +29,7 @@ export const Login: React.FC = () => {
             try {
                 window.google.accounts.id.initialize({
                     ux_mode: "popup",
-                    client_id: GOOGLE_CLIENT_ID,
+                    client_id: GOOGLE_CLIENT_ID ,
                     callback: async (res: CredentialResponse) => {
                         if (res.credential) {
                             login(res);
@@ -56,6 +58,7 @@ export const Login: React.FC = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                backgroundColor: '#FCFCFC',
             }}
             >
             <Box
@@ -63,20 +66,15 @@ export const Login: React.FC = () => {
                 gap="25px"
                 justifyContent="center"
                 flexDirection="column"
+                
             >
-                <ThemedTitle
-                collapsed={false}
-                wrapperStyles={{
-                    fontSize: "22px",
-                    justifyContent: "center",
-                }}
-                />
-
+                
+                <div>
+                <img src={yariga} alt="" />
+                </div>
                 <GoogleButton />
 
-                <Typography align="center" color={"text.secondary"} fontSize="12px">
-                Powered by Auth0
-                </Typography>
+                
             </Box>
             </Container>
         );
